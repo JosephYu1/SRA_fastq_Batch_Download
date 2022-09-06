@@ -5,12 +5,15 @@
 # Date Created: 9-2-2022
 # Project:      Rhesus_PrediXcan
 
+# Check for valid argument numbers
 if [[ $# -ne 1 ]]
 then
   echo "usage: SRA_Batch_Download.sh [ file ]" > /dev/stderr
 fi
 
+# Check for file read permissions
 if ! [ -r "$1" ]
 then
   echo "$1 is not readable" > /dev/stderr
 fi
+
