@@ -17,11 +17,18 @@ then
   echo "$1 is not readable" > /dev/stderr
 fi
 
+# Check if fastq-dump is installed and available for use
+if ! command -v fastq-dump &> /dev/null
+then
+  echo "Please make sure fastq-dump is installed and can be used" > /dev/stderr
+  exit 1
+fi
+
 # Reading from file with one SRA number on one line
 while IFS= read -r line
 do
   # Call SRA Toolkit to fetch from database
   echo -n "Getting data for $1..."
-
+  fastq-dump
   echo "Done!"
 done < "$1"
