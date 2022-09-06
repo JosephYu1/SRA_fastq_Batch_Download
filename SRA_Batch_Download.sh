@@ -17,3 +17,11 @@ then
   echo "$1 is not readable" > /dev/stderr
 fi
 
+# Reading from file with one SRA number on one line
+while IFS= read -r line
+do
+  # Call SRA Toolkit to fetch from database
+  echo -n "Getting data for $1..."
+
+  echo "Done!"
+done < "$1"
