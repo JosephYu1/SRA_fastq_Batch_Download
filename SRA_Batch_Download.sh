@@ -29,6 +29,6 @@ while IFS= read -r line
 do
   # Call SRA Toolkit to fetch from database
   echo -n "Getting data for $1..."
-  fastq-dump
+  # fastq-dump
   echo "Done!"
 done < "$1"
