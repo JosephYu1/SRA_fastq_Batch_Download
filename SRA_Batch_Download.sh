@@ -10,7 +10,7 @@ then
   echo "usage: SRA_Batch_Download.sh [ file ]" > /dev/stderr
 fi
 
-if ! [ -r $1 ]
+if ! [ -r "$1" ]
 then
-  echo "$1 is not readable"
+  echo "$1 is not readable" > /dev/stderr
 fi
