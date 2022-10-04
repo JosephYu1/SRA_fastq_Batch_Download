@@ -29,6 +29,6 @@ while IFS= read -r line
 do
   # Call SRA Toolkit to fetch from database
   echo "Getting data for $line..."
-  prefetch $line
+  prefetch --max-size u $line
   fastq-dump $line
 done < "$1"
